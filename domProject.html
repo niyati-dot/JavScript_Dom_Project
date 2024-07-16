@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects</title>
+  <style>
+     body{
+      font-family:arial;
+    }
+    button.subsBtn{
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: black;
+        color: white;
+        border-radius: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 30px;
+    }
+    button.subscribedNew{
+      background-color: white;
+      color: black;
+      border-color: white;;
+    }
+    input.calInp {
+      padding: 10px;
+    }
+    h4.am{
+      font-size: 15px;
+    }
+    button.calbtn{
+      background-color: green;
+      color: white;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <H4>YouTube Subscribe Button</H4>
+  <button class="subsBtn" onclick="subscribeFun()">Subscribe</button>
+  <p>Rock Paper Scisoors <a href="rock_paper_function_object.html">Click here</a></p> 
+
+  <h4 class="am">Amazon Shipping Calculator</h4>
+  <p>Orders Under $40 = $10 Shipping.<br>Order Over $40 = Free Shipping.</p>
+
+  <input placeholder="Enter Amount" class="calInp" onkeydown="handCosy(event)">
+  <button onclick="shippingCal()" class="calbtn">Calculate</button>
+  <p class="displayCost"></p>
+
+
+  <script>
+    function subscribeFun(){
+      const btnElement = document.querySelector('.subsBtn');
+      if(btnElement.innerHTML === 'Subscribe'){
+        btnElement.innerHTML = 'Subscribed';
+        btnElement.classList.add('subscribedNew');
+
+      }else{
+        btnElement.innerHTML = 'Subscribe';
+        btnElement.classList.remove('subscribedNew');
+      }
+    }
+
+    //function for shipping cal
+    function shippingCal(){
+      const inputEle = document.querySelector('.calInp');
+      let inpValue = Number(inputEle.value);
+      if(inpValue < 40){
+        inpValue = (inpValue*100) + 1000; //convert into cents
+      }else{
+        inpValue = inpValue;
+      }
+      document.querySelector('.displayCost')
+        .innerHTML = `$${(inpValue)/100}`; //convert back into $$
+    }
+
+    function handCosy(event){
+      if(event.key === 'Enter'){
+      shippingCal();
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM - Document Object Model</title>
+</head>
+<body>
+<button>9a</button>
+<button class="bBtn">9b</button><br><br>
+<button class="bBtn1" onclick="display('heads')">heads</button>
+<button class="bBtn2" onclick="display('tails')">tails</button>
+<p class="displayHere"></p>
+<br>
+<input placeholder="Enter Name" class="nameInp" onkeydown="takeName(event)">
+<button onclick="getName()">Submit</button>
+<p class="displayName"></p>
+<input placeholder="Enter Name" class="instantInp" onkeyup="myFun()">
+<p class="showHere"></p>
+
+<script>
+  //document.body.innerHTML = "Hello Niya"; //will remove everything on the page and will display text hello
+  /*console.log(document.querySelector('button'));
+  console.log(document.querySelector('button').innerHTML);
+  console.log(document.querySelector('button')
+    .innerHTML = 'Change');
+  */
+ console.log(document.querySelector('button'));
+ console.log(document.querySelector('.bBtn').innerHTML = '9b done!');
+ function display(option){
+  if(option === 'heads'){
+    document.querySelector('.displayHere').innerHTML = 'You       Choose: Heads';
+  }else{
+    document.querySelector('.displayHere').innerHTML = 'You   Choose: Tails';
+  }
+ }
+
+ function takeName(event){
+  if(event.key === 'Enter'){
+    getName();
+  }
+ }
+ function getName(){
+  const disName = document.querySelector('.nameInp');
+  let valueName = disName.value;
+  document.querySelector('.displayName')
+    .innerHTML = `Your Name is ${valueName}.`
+ }
+
+ function myFun(){
+  const x = document.querySelector('.instantInp');
+  let y = x.value;
+  document.querySelector('.showHere').innerHTML = y;
+ }
+</script>  
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Quantity</title>
+  <style></style>
+</head>
+<body>
+ 
+  <button class="btn1" title="Add to Cart" onclick="updateCart(1,'+')">Add to Cart</button>
+  <button class="btn1" title="Add 2" onclick="updateCart(2,'+')">+2</button>
+  <button class="btn1" title="Add 3" onclick="updateCart(3,'+')">+3</button>
+  <button class="btn1" title="Add 4" onclick="updateCart(4,'+')">+4</button>
+  <button class="btn1" title="Add 5" onclick="updateCart(5,'+')">+5</button>
+  <button class="btn1" title="Remove by 1" onclick="updateCart(1,'-')">Remove from Cart</button>
+  <button class="btn1" title="Remove by 2" onclick="updateCart(2,'-')">Remove -2</button>
+  <button class="btn1" title="Remove by 3" onclick="updateCart(3,'-')">Remove -3</button>
+  <button class="btn1" title="Restart" onclick="updateCart(0)">Restart Cart</button>
+  <p class="showCart">Cart Quantity: 0</p>
+
+  <script>
+    let cartQty = 0;
+    function updateCart(number,sign1){
+      console.log(sign1);
+      if(sign1 === '+'){
+        cartQty += number;
+      }else if(sign1 === '-'){
+        cartQty -= number;
+      }else{
+        cartQty = 0;
+      }
+      document.querySelector('.showCart')
+        .innerHTML = `Cart Quantity: ${cartQty}`;
+    }
+    
+  </script>
+</body>
+</html>

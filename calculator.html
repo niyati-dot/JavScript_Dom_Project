@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    .pdiv {
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+<h4>Calculator</h4>
+<div class="pdiv">
+<p class="displayNum"></p>
+</div>
+<div>
+<p>
+  <button class="btn" title="1" onclick="calFun(1);">1</button>
+  <button class="btn" title="2" onclick="calFun(2);">2</button>
+  <button class="btn" title="3" onclick="calFun(3);">3</button>
+  <button class="btn" title="+" onclick="calFun(' + ');">+</button>
+</p>
+<p>
+  <button class="btn" title="4" onclick="calFun(4);">4</button>
+  <button class="btn" title="5" onclick="calFun(5);">5</button>
+  <button class="btn" title="6" onclick="calFun(6);">6</button>
+  <button class="btn" title="-" onclick="calFun(' - ');">-</button>
+</p>
+<p>
+  <button class="btn" title="7" onclick="calFun(7);">7</button>
+  <button class="btn" title="8" onclick="calFun(8);">8</button>
+  <button class="btn" title="9" onclick="calFun(9);">9</button>
+  <button class="btn" title="*" onclick="calFun(' * ');">*</button>
+</p>
+  <button class="btn" title="0" onclick="calFun(0);">0</button>
+  <button class="btn" title="." onclick="calFun('.');">.</button>
+  <button class="btn" title="=" onclick="calFun('=');">=</button>
+  <button class="btn" title="/" onclick="calFun(' / ');">/</button>
+</p>
+<p>
+  <button class="btn" title="clear" onclick="
+    document.querySelector('.displayNum')
+      .innerHTML = `Calculator Reseted`;
+  ">Clear</button>
+</p>
+</div>
+<script>
+let calculation = '';
+function calFun(number){
+  if(number === '='){
+    calculation = eval(calculation);
+    document.querySelector('.displayNum')
+      .innerHTML = calculation;
+  }else{
+    calculation += number;
+    document.querySelector('.displayNum')
+      .innerHTML = calculation;
+  }
+}
+</script>
+</body>
+</html>

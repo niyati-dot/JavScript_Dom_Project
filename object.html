@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+</head>
+<body>
+
+  <script>
+    console.log(localStorage.getItem('hey'));
+    const product2 = {
+      name: 'shirt',
+      price: 100,
+      rating: {
+        starts: 4.5,
+        count: 85
+      },
+      fun: function function1(){
+        console.log("function is inside object");
+      }
+    }
+    console.log(product2.name);
+    console.log(product2['price']);
+    console.log(product2.rating.count);
+    product2.fun();
+    //JSON built-in object
+    covertIntoJson = JSON.stringify(product2)
+    console.log(covertIntoJson)
+    convertIntoJsFromJson = JSON.parse(covertIntoJson);
+    console.log(convertIntoJsFromJson);
+
+    //localStorage built-in object
+    localStorage.setItem('hey','Hello');
+    
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+    //to demostrate how objects are references
+    const object1 = {
+      message: 'Hello Niya!'
+    };
+    const object2 = object1;
+    console.log(object2)
+
+    const productObje = {
+      name: 'basketball',
+      price: 2095
+    }
+    productObje.price = productObje.price + 500;
+    productObje['delivery-time'] = '3 Days';
+    console.log(`product is: ${productObje.name} for $${productObje.price/100} where estimated delivery time ${productObje['delivery-time']}`);
+
+    
+    function comparePrice(pro1,pro2){
+      
+    }
+
+
+  </script>
+</body>
+</html>
